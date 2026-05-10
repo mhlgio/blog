@@ -3,7 +3,7 @@ replicaCount: 1
 image:
   repository: git.home.mhlg.io/matehal/blog
   tag: latest
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
 
 imagePullSecrets: []
 nameOverride: ""
