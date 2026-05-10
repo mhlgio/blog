@@ -26,7 +26,7 @@ jobs:
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
-          password: ${{ secrets.FORGEJO_TOKEN }}
+          password: ${{ secrets.PACKAGE_REGISTRY_TOKEN }}
 
       - name: Build and push image
         uses: docker/build-push-action@v6
