@@ -24,6 +24,11 @@ ingress:
           pathType: Prefix
   tls: []
 
+traefik:
+  redirectToHttps:
+    enabled: false
+    permanent: true
+
 resources: {}
 
 podAnnotations: {}

@@ -1,0 +1,12 @@
+{{- if .Values.traefik.redirectToHttps.enabled -}}
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name: {{ include "blog.fullname" . }}-redirect-https
+  labels:
+    {{- include "blog.labels" . | nindent 4 }}
+spec:
+  redirectScheme:
+    scheme: https
+    permanent: {{ .Values.traefik.redirectToHttps.permanent }}
+{{- end }}

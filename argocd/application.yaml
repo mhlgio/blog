@@ -13,6 +13,8 @@ spec:
     path: charts/blog
     helm:
       releaseName: blog
+      valueFiles:
+        - values-home.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: blog
