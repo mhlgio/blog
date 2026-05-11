@@ -3,7 +3,7 @@
 Deploy the Astro blog locally:
 
 ```sh
-helm upgrade --install blog ./charts/blog
+helm upgrade --install blog ./charts/blog --set image.tag=<commit-sha>
 kubectl port-forward svc/blog 8080:80
 ```
 
@@ -18,6 +18,7 @@ kubectl create secret docker-registry forgejo-registry \
   --docker-password=<token>
 
 helm upgrade --install blog ./charts/blog \
+  --set image.tag=<commit-sha> \
   --set imagePullSecrets[0].name=forgejo-registry
 ```
 
@@ -26,3 +27,7 @@ Override the image tag when deploying a specific build:
 ```sh
 helm upgrade --install blog ./charts/blog --set image.tag=<commit-sha>
 ```
+
+Argo CD sets `image.tag` from `$ARGOCD_APP_REVISION`, so each synced Git
+revision renders a Deployment that points at the image built from the same
+commit SHA.

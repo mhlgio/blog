@@ -15,6 +15,10 @@ spec:
       releaseName: blog
       valueFiles:
         - values-home.yaml
+      parameters:
+        - name: image.tag
+          value: $ARGOCD_APP_REVISION
+          forceString: true
   destination:
     server: https://kubernetes.default.svc
     namespace: blog

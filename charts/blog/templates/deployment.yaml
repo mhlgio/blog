@@ -27,7 +27,7 @@ spec:
       {{- end }}
       containers:
         - name: {{ include "blog.name" . }}
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          image: "{{ .Values.image.repository }}:{{ required "image.tag is required. Set it to the immutable image tag for this deployment." .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http

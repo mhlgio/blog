@@ -2,7 +2,8 @@ replicaCount: 1
 
 image:
   repository: git.home.mhlg.io/matehal/blog
-  tag: latest
+  # Argo CD sets this to $ARGOCD_APP_REVISION; local installs must pass it.
+  tag: ""
   pullPolicy: Always
 
 imagePullSecrets: []
