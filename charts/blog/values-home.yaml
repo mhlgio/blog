@@ -1,0 +1,19 @@
+ingress:
+  enabled: true
+  className: traefik
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt
+    traefik.ingress.kubernetes.io/router.middlewares: blog-blog-redirect-https@kubernetescrd
+  hosts:
+    - host: blog.home.mhlg.io
+      paths:
+        - path: /
+          pathType: Prefix
+  tls:
+    - secretName: blog-home-mhlg-io-tls
+      hosts:
+        - blog.home.mhlg.io
+
+traefik:
+  redirectToHttps:
+    enabled: true
