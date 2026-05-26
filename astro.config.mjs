@@ -9,7 +9,19 @@ export default defineConfig({
   site: "https://blog.home.mhlg.io",
   integrations: [sitemap(), mdx(), pagefind()],
   vite: {
-    plugins: [tailwindcss()],
+    plugins: [
+      // Bridge Vite's internal dev-client import so Astro dev resolves it.
+      {
+        name: "resolve-vite-env-client",
+        enforce: "pre",
+        resolveId(id) {
+          if (id === "@vite/env") {
+            return "/@vite/env";
+          }
+        },
+      },
+      tailwindcss(),
+    ],
   },
   markdown: {
     shikiConfig: {

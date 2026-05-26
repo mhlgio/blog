@@ -5,12 +5,12 @@ Personal blog and project notebook built with Astro.
 ## Development
 
 ```sh
-npm install
-npm run dev
+pnpm install
+pnpm run dev
 ```
 
 ## Build
 
 ```sh
-npm run build
+pnpm run build
 ```
