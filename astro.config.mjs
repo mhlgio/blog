@@ -10,16 +10,6 @@ export default defineConfig({
   integrations: [sitemap(), mdx(), pagefind()],
   vite: {
     plugins: [
-      // Bridge Vite's internal dev-client import so Astro dev resolves it.
-      {
-        name: "resolve-vite-env-client",
-        enforce: "pre",
-        resolveId(id) {
-          if (id === "@vite/env") {
-            return "/@vite/env";
-          }
-        },
-      },
       tailwindcss(),
     ],
   },

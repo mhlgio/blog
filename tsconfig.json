@@ -6,7 +6,12 @@
     "strictNullChecks": true,
     "baseUrl": ".",
     "paths": {
-      "@*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@components/*": ["./src/components/*"],
+      "@consts": ["./src/consts.ts"],
+      "@layouts/*": ["./src/layouts/*"],
+      "@lib/*": ["./src/lib/*"],
+      "@types": ["./src/types.ts"]
     }
   }
 }

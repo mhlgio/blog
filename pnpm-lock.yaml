@@ -27,7 +27,7 @@ importers:
         specifier: ^5.2.5
         version: 5.2.5
       '@tailwindcss/vite':
-        specifier: ^4.1.13
+        specifier: ^4.3.0
         version: 4.3.0(vite@7.3.3(@types/node@24.12.3)(jiti@2.7.0)(lightningcss@1.32.0)(yaml@2.8.4))
       astro:
         specifier: ^6.3.8
@@ -42,10 +42,10 @@ importers:
         specifier: ^0.34.5
         version: 0.34.5
       tailwind-merge:
-        specifier: ^3.3.1
-        version: 3.5.0
+        specifier: ^3.6.0
+        version: 3.6.0
       tailwindcss:
-        specifier: ^4.1.13
+        specifier: ^4.3.0
         version: 4.3.0
       typescript:
         specifier: ^5.9.2
@@ -1982,8 +1982,8 @@ packages:
     engines: {node: '>=16'}
     hasBin: true
 
-  tailwind-merge@3.5.0:
-    resolution: {integrity: sha512-I8K9wewnVDkL1NTGoqWmVEIlUcB9gFriAEkXkfCjX5ib8ezGxtR3xD7iZIxrfArjEsH7F1CHD4RFUtxefdqV/A==}
+  tailwind-merge@3.6.0:
+    resolution: {integrity: sha512-uxL7qAVQriqRQPAyK3pj66VqskWqoZ37PW94jwOTwNfq/z9oyu1V+eqrZqtR2+fCiXdYOZe/Modt8GtvqNzu+w==}
 
   tailwindcss@4.3.0:
     resolution: {integrity: sha512-y6nxMGB1nMW9R6k96e5gdIFzcfL/gTJRNaqGes1YvkLnPVXzWgbqFF2yLC0T8G774n24cx3Pe8XrKoniCOAH+Q==}
@@ -4625,7 +4625,7 @@ snapshots:
       picocolors: 1.1.1
       sax: 1.6.0
 
-  tailwind-merge@3.5.0: {}
+  tailwind-merge@3.6.0: {}
 
   tailwindcss@4.3.0: {}
 
