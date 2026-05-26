@@ -1,130 +1,42 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/Container.astro";
-import { SITE, HOME, SOCIALS } from "@consts";
-import ArrowCard from "@components/ArrowCard.astro";
+import { HOME } from "@consts";
 import Link from "@components/Link.astro";
-import { getCollection } from "astro:content";
-import type { CollectionEntry } from "astro:content";
 
-const blog = (await getCollection("blog"))
-  .filter((post) => !post.data.draft)
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-  .slice(0, SITE.NUM_POSTS_ON_HOMEPAGE);
-
-const projects: CollectionEntry<"projects">[] = (
-  await getCollection("projects")
-)
-  .filter((project) => !project.data.draft)
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-  .slice(0, SITE.NUM_PROJECTS_ON_HOMEPAGE);
+const resumeUrl =
+  "https://dl.dropboxusercontent.com/u/9035816/Mateusz%20Haligowski%20CV%20%5Ben%5D.pdf";
 ---
 
 <Layout title={HOME.TITLE} description={HOME.DESCRIPTION}>
   <Container>
     <aside data-pagefind-ignore>
-      <h1 class="font-semibold text-black dark:text-white">
-        Mateusz Haligowski
-      </h1>
-      <div class="space-y-16">
-        <section>
-          <article class="space-y-4">
-            <span>
-              <p>
-                I build and operate software systems, with a soft spot for
-                infrastructure, developer tooling, and the small details that
-                make production systems feel calm.
-              </p>
-              <p>
-                This is where I collect notes, project writeups, and the
-                occasional durable thought while the work is still fresh.
-              </p>
-            </span>
-            <span class="animate">
-              <p>
-                Expect practical writing about systems, Kubernetes, automation,
-                web development, and the craft of keeping useful things alive.
-              </p>
-              <p>
-                The source for this site lives on
-                <Link href="https://github.com/matehal">GitHub</Link>.
-              </p>
-            </span>
-          </article>
-        </section>
-
-        <section class="animate space-y-6">
-          <div class="flex flex-wrap items-center justify-between gap-y-2">
-            <h2 class="font-semibold text-black dark:text-white">
-              Latest posts
-            </h2>
-            <Link href="/blog"> See all posts </Link>
-          </div>
-          <ul class="not-prose flex flex-col gap-4">
-            {
-              blog.map((post) => (
-                <li>
-                  <ArrowCard entry={post} />
-                </li>
-              ))
-            }
-          </ul>
-        </section>
-
-        <section class="animate space-y-6">
-          <div class="flex flex-wrap items-center justify-between gap-y-2">
-            <h2 class="font-semibold text-black dark:text-white">
-              Recent projects
-            </h2>
-            <Link href="/projects"> See all projects </Link>
-          </div>
-          <ul class="not-prose flex flex-col gap-4">
-            {
-              projects.map((project) => (
-                <li>
-                  <ArrowCard entry={project} />
-                </li>
-              ))
-            }
-          </ul>
-        </section>
-
-        <section class="animate space-y-4">
-          <h2 class="font-semibold text-black dark:text-white">
-            Let's Connect
-          </h2>
-          <article>
+      <section class="space-y-8">
+        <h1 class="animate text-3xl font-semibold text-black dark:text-white">
+          Mateusz Haligowski
+        </h1>
+        <article class="space-y-4">
+          <div class="animate space-y-4">
             <p>
-              If you want to get in touch about software, infrastructure, or
-              something I wrote, send me a note.
+              I'm a software engineer living in Seattle, Washington. I tinker a
+              lot with many different technologies to broaden my horizons and
+              become a better programmer.
             </p>
-          </article>
-          <ul class="not-prose flex flex-wrap gap-2">
-            {
-              SOCIALS.map((SOCIAL) => (
-                <li class="flex gap-x-2 text-nowrap">
-                  <Link
-                    href={SOCIAL.HREF}
-                    external
-                    aria-label={`${SITE.TITLE} on ${SOCIAL.NAME}`}
-                  >
-                    {SOCIAL.NAME}
-                  </Link>
-                  {"/"}
-                </li>
-              ))
-            }
-            <li class="line-clamp-1">
-              <Link
-                href={`mailto:${SITE.EMAIL}`}
-                aria-label={`Email ${SITE.TITLE}`}
-              >
-                {SITE.EMAIL}
-              </Link>
-            </li>
-          </ul>
-        </section>
-      </div>
+            <p>
+              I <Link href="https://www.twitter.com/mhlgio" external
+                >tweet</Link
+              > from time to time, and as you probably notice I try doing some
+              <Link href="/blog">blogging</Link>. Feel free to contact me via
+              Twitter.
+            </p>
+          </div>
+          <p class="animate">
+            If you're interested in my resume, you can have it from here
+            <Link href={resumeUrl} external>PDF</Link>. If you want to subscribe
+            to my blog, the RSS channel is <Link href="/rss.xml">here</Link>.
+          </p>
+        </article>
+      </section>
     </aside>
   </Container>
 </Layout>
