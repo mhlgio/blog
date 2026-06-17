@@ -20,9 +20,6 @@ importers:
       '@astrojs/sitemap':
         specifier: ^3.7.3
         version: 3.7.3
-      '@fontsource/atkinson-hyperlegible':
-        specifier: ^5.2.8
-        version: 5.2.8
       '@fontsource/geist-mono':
         specifier: ^5.2.7
         version: 5.2.7
@@ -340,9 +337,6 @@ packages:
     engines: {node: '>=18'}
     cpu: [x64]
     os: [win32]
-
-  '@fontsource/atkinson-hyperlegible@5.2.8':
-    resolution: {integrity: sha512-HciLcJ5DIK/OVOdo71EbEN4NnvDFlp6/SpAxtcbWf2aAdcsOuPqITxj5KNEXb48qSPSdnnZdGGnSJChPKi3/bA==}
 
   '@fontsource/geist-mono@5.2.7':
     resolution: {integrity: sha512-xVPVFISJg/K0VVd+aQN0Y7X/sw9hUcJPyDWFJ5GpyU3bHELhoRsJkPSRSHXW32mOi0xZCUQDOaPj1sqIFJ1FGg==}
@@ -2625,8 +2619,6 @@ snapshots:
 
   '@esbuild/win32-x64@0.27.7':
     optional: true
-
-  '@fontsource/atkinson-hyperlegible@5.2.8': {}
 
   '@fontsource/geist-mono@5.2.7': {}
 
