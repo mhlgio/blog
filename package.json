@@ -16,6 +16,7 @@
     "@astrojs/sitemap": "^3.7.3",
     "@fontsource/atkinson-hyperlegible": "^5.2.8",
     "@fontsource/geist-mono": "^5.2.7",
+    "@fontsource/ibm-plex-sans": "^5.2.8",
     "@fontsource/literata": "^5.2.8",
     "@tailwindcss/vite": "^4.3.0",
     "astro": "^6.4.8",
