@@ -7,40 +7,34 @@ import { SITE } from "@consts";
 <header transition:persist>
   <Container>
     <div class="grid grid-cols-[1fr_auto] items-center gap-4">
-      <Link href="/" underline={false}>
-        <div class="leading-none font-semibold">
-          {SITE.TITLE.toLocaleLowerCase()}
-        </div>
-      </Link>
+      <div class="flex items-center gap-3">
+        <Link href="/" underline={false}>
+          <div class="text-lg leading-none font-semibold">
+            {SITE.TITLE.toLocaleLowerCase()}
+          </div>
+        </Link>
+        <Link href="/blog" underline={false}>
+          <span class="text-base">blog</span>
+        </Link>
+        <Link href="/" underline={false}>
+          <span class="text-base">about me</span>
+        </Link>
+      </div>
       <nav
         aria-label="Primary"
-        class="justify-self-end rounded-full border border-black/10 bg-neutral-50/80 px-2 py-1 text-xs font-medium shadow-sm shadow-black/5 backdrop-blur-md dark:border-white/15 dark:bg-neutral-950/60 dark:shadow-black/30"
+        class="justify-self-end rounded-full border border-black/10 bg-neutral-50/80 px-2 py-1 text-sm font-medium shadow-sm shadow-black/5 backdrop-blur-md dark:border-white/15 dark:bg-neutral-950/60 dark:shadow-black/30"
       >
         <div class="flex items-center gap-1">
-          <Link href="/blog" underline={false}>
-            <span
-              class="block rounded-full px-2.5 py-1 transition-colors duration-300 ease-in-out hover:bg-black/5 focus-visible:bg-black/5 dark:hover:bg-white/10 dark:focus-visible:bg-white/10"
-            >
-              blog
-            </span>
-          </Link>
-          <Link href="/projects" underline={false}>
-            <span
-              class="block rounded-full px-2.5 py-1 transition-colors duration-300 ease-in-out hover:bg-black/5 focus-visible:bg-black/5 dark:hover:bg-white/10 dark:focus-visible:bg-white/10"
-            >
-              projects
-            </span>
-          </Link>
           <button
             id="magnifying-glass"
             aria-label="Search"
-            class="grid size-7 place-items-center rounded-full transition-colors duration-300 ease-in-out hover:bg-black/5 hover:text-black focus-visible:bg-black/5 focus-visible:text-black dark:hover:bg-white/10 dark:hover:text-white dark:focus-visible:bg-white/10 dark:focus-visible:text-white"
+            class="grid size-8 place-items-center rounded-full transition-colors duration-300 ease-in-out hover:bg-black/5 hover:text-black focus-visible:bg-black/5 focus-visible:text-black dark:hover:bg-white/10 dark:hover:text-white dark:focus-visible:bg-white/10 dark:focus-visible:text-white"
           >
             <svg
-              height="16"
+              height="20"
               stroke-linejoin="round"
               viewBox="0 0 16 16"
-              width="16"
+              width="20"
               style="color: currentcolor;"
               ><path
                 fill-rule="evenodd"
