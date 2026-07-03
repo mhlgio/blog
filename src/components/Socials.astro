@@ -1,0 +1,27 @@
+---
+import Link from "@components/Link.astro";
+import { SOCIALS } from "@consts";
+import { cn } from "@lib/utils";
+
+type Props = {
+  class?: string;
+};
+
+const { class: className } = Astro.props;
+---
+
+<ul class={cn("flex flex-wrap items-center gap-x-4 gap-y-1.5", className)}>
+  {
+    SOCIALS.map((social) => (
+      <li>
+        <Link
+          href={social.HREF}
+          external={social.HREF.startsWith("http")}
+          underline={false}
+        >
+          {social.NAME}
+        </Link>
+      </li>
+    ))
+  }
+</ul>

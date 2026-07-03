@@ -28,10 +28,18 @@ export const PROJECTS: Metadata = {
 export const SOCIALS: Socials = [
   {
     NAME: "GitHub",
-    HREF: "https://github.com/matehal",
+    HREF: "https://github.com/mhlgio",
+  },
+  {
+    NAME: "LinkedIn",
+    HREF: "https://www.linkedin.com/in/mhaligowski",
   },
   {
     NAME: "Website",
     HREF: "https://mhlg.io",
+  },
+  {
+    NAME: "Email",
+    HREF: `mailto:${SITE.EMAIL}`,
   },
 ];
