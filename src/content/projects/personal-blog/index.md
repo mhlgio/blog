@@ -2,7 +2,7 @@
 title: "Personal blog"
 description: "An Astro-powered home for notes, projects, and technical writing."
 date: "2026-05-11"
-repoURL: "https://github.com/matehal/blog"
+repoURL: "https://github.com/mhlgio/blog"
 ---
 
 This site is a small Astro blog customized for my writing and project notes.
