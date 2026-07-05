@@ -1,8 +1,14 @@
 ---
+import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/Container.astro";
+import FormattedDate from "@components/FormattedDate.astro";
 import { HOME, SITE } from "@consts";
 import Link from "@components/Link.astro";
+
+const latest = (await getCollection("blog"))
+  .filter((post) => !post.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())[0];
 ---
 
 <Layout title={HOME.TITLE} description={HOME.DESCRIPTION}>
@@ -35,6 +41,18 @@ import Link from "@components/Link.astro";
           <p class="animate">
             To subscribe, the RSS feed is <Link href="/rss.xml">here</Link>.
           </p>
+          {
+            latest && (
+              <p class="animate mt-8 border-t border-black/10 pt-6 text-sm dark:border-white/10">
+                <span class="text-black/50 dark:text-white/50">Latest:</span>{" "}
+                <Link href={`/blog/${latest.id}`}>{latest.data.title}</Link>
+                {" — "}
+                <span class="text-black/50 dark:text-white/50">
+                  <FormattedDate date={latest.data.date} />
+                </span>
+              </p>
+            )
+          }
         </article>
       </section>
     </aside>
