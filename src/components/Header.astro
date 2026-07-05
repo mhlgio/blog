@@ -9,8 +9,18 @@ import { SITE } from "@consts";
     <div class="grid grid-cols-[1fr_auto] items-center gap-4">
       <div class="flex items-center gap-3">
         <Link href="/" underline={false}>
-          <div class="text-lg leading-none font-semibold">
-            {SITE.TITLE.toLocaleLowerCase()}
+          <div class="flex items-center gap-2">
+            <img
+              src="/assets/images/avatar.png"
+              alt="Mateusz Haligowski"
+              width="40"
+              height="40"
+              class="size-10 rounded-full"
+              loading="eager"
+            />
+            <div class="text-lg leading-none font-semibold">
+              {SITE.TITLE.toLocaleLowerCase()}
+            </div>
           </div>
         </Link>
         <Link href="/blog" underline={false}>
