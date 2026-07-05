@@ -8,14 +8,14 @@ import { SITE } from "@consts";
   <Container>
     <div class="grid grid-cols-[1fr_auto] items-center gap-4">
       <div class="flex items-center gap-3">
-        <Link href="/" underline={false}>
+        <Link href="/" underline={false} group>
           <div class="flex items-center gap-2">
             <img
               src="/assets/images/avatar.png"
               alt="Mateusz Haligowski"
               width="40"
               height="40"
-              class="size-10 rounded-full"
+              class="size-10 rounded-full transition-transform duration-300 ease-in-out group-hover:scale-110 group-hover:-rotate-3"
               loading="eager"
             />
             <div class="text-lg leading-none font-semibold">
@@ -23,11 +23,17 @@ import { SITE } from "@consts";
             </div>
           </div>
         </Link>
-        <Link href="/blog" underline={false}>
-          <span class="text-base">blog</span>
+        <Link href="/blog" underline={false} group>
+          <span
+            class="inline-block text-base transition-transform duration-300 ease-in-out group-hover:-translate-y-0.5"
+            >blog</span
+          >
         </Link>
-        <Link href="/" underline={false}>
-          <span class="text-base">about me</span>
+        <Link href="/" underline={false} group>
+          <span
+            class="inline-block text-base transition-transform duration-300 ease-in-out group-hover:-translate-y-0.5"
+            >about me</span
+          >
         </Link>
       </div>
       <nav
