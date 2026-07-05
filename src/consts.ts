@@ -35,6 +35,10 @@ export const SOCIALS: Socials = [
     HREF: "https://www.linkedin.com/in/mhaligowski",
   },
   {
+    NAME: "Bluesky",
+    HREF: "https://bsky.app/profile/matehal.bsky.social",
+  },
+  {
     NAME: "Email",
     HREF: `mailto:${SITE.EMAIL}`,
   },
