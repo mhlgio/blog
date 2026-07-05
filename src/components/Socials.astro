@@ -1,16 +1,34 @@
 ---
+import { Icon } from "astro-icon/components";
 import Link from "@components/Link.astro";
 import { SOCIALS } from "@consts";
 import { cn } from "@lib/utils";
 
 type Props = {
   class?: string;
+  icons?: boolean;
 };
 
-const { class: className } = Astro.props;
+const { class: className, icons = false } = Astro.props;
+
+// Iconify icon name per SOCIALS entry (brands from Simple Icons,
+// mail from Lucide). currentColor lets the Link's hover/focus color
+// transitions drive the icon.
+const ICONS: Record<string, string> = {
+  GitHub: "simple-icons:github",
+  LinkedIn: "simple-icons:linkedin",
+  Bluesky: "simple-icons:bluesky",
+  Email: "lucide:mail",
+};
 ---
 
-<ul class={cn("flex flex-wrap items-center gap-x-4 gap-y-1.5", className)}>
+<ul
+  class={cn(
+    "flex flex-wrap items-center gap-y-1.5",
+    icons ? "gap-x-3" : "gap-x-4",
+    className
+  )}
+>
   {
     SOCIALS.map((social) => (
       <li>
@@ -18,8 +36,13 @@ const { class: className } = Astro.props;
           href={social.HREF}
           external={social.HREF.startsWith("http")}
           underline={false}
+          aria-label={social.NAME}
         >
-          {social.NAME}
+          {icons && ICONS[social.NAME] ? (
+            <Icon name={ICONS[social.NAME]} class="size-5" />
+          ) : (
+            social.NAME
+          )}
         </Link>
       </li>
     ))
