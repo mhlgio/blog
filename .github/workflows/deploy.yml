@@ -29,6 +29,8 @@ jobs:
         # (which also generates the Pagefind search index) and uploads
         # the Pages artifact from ./dist.
         uses: withastro/action@v3
+        with:
+          node-version: 22
 
   deploy:
     needs: build
