@@ -1,7 +1,0 @@
-The blog has been deployed.
-
-To test it locally without ingress:
-  kubectl port-forward svc/{{ include "blog.fullname" . }} 8080:{{ .Values.service.port }}
-
-Then open:
-  http://localhost:8080
