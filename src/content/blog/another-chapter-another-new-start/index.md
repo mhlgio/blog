@@ -2,7 +2,7 @@
 title: "Another chapter, another new start"
 description: "Recent years brought revolutionary changes to my life. I’m talking my personal life, my career, my hobbies and the world around me. This deserves some self-reflection and a quick peek at where I’ve been and where I’m going."
 date: 2026-07-08
-draft: true
+draft: false
 image: ./hero.jpg
 imageAlt: "Trevor Pearcey operating the CSIR Mk1, one of the world's first digital computers, in 1952"
 imageCredit: "Trevor Pearcey and CSIR Mk1, 1952 — Museums Victoria, via Unsplash"
