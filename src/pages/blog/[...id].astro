@@ -1,5 +1,6 @@
 ---
 import { type CollectionEntry, getCollection, render } from "astro:content";
+import { Image } from "astro:assets";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/Container.astro";
 import FormattedDate from "@components/FormattedDate.astro";
@@ -51,11 +52,31 @@ const post = Astro.props;
 const { Content, headings } = await render(post);
 ---
 
-<Layout title={post.data.title} description={post.data.description}>
+<Layout
+  title={post.data.title}
+  description={post.data.description}
+  image={post.data.image?.src}
+>
   <Container>
     <div class="animate">
       <BackToPrevious href="/blog">Back to blog</BackToPrevious>
     </div>
+    {
+      post.data.image && (
+        <figure class="animate mt-10">
+          <Image
+            src={post.data.image}
+            alt={post.data.imageAlt ?? post.data.title}
+            class="w-full rounded-sm"
+          />
+          {post.data.imageCredit && (
+            <figcaption class="mt-1.5 text-sm text-black/50 dark:text-white/50">
+              {post.data.imageCredit}
+            </figcaption>
+          )}
+        </figure>
+      )
+    }
     <div class="my-10 space-y-1">
       <div class="animate flex items-center gap-1.5">
         <div class="font-base text-sm">
