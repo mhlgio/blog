@@ -6,6 +6,11 @@ draft: true
 image: ./hero.jpg
 imageAlt: "Trevor Pearcey operating the CSIR Mk1, one of the world's first digital computers, in 1952"
 imageCredit: "Trevor Pearcey and CSIR Mk1, 1952 — Museums Victoria, via Unsplash"
+tags:
+  - life
+  - career
+  - blogging
+  - astro
 ---
 
 I turned 40 recently. By no means do I feel old. In fact, in many areas of my life I feel better than ever. Just in the first half of 2026 I ran two half-marathons, the first in my life, and I just started preparations for the Seattle Marathon. As for my career, the past couple of years have been challenging, but I’m surviving, and I actually found a new hobby in homelabbing. The milestone made me look at my tech blog again, and look how far I’ve gone in my journey as a… well, tech nerd, for lack of a more precise word.
@@ -27,7 +32,7 @@ I ended up going with [Astro.js](https://astro.build) though. Although not a sta
 
 I looked around for templates and ended up with the [Astro Micro](https://astro-micro.vercel.app/) template. Made some minor adjustments (fonts, some behavior). Claude AI helped with it a lot. I moved all of the past posts with Claude AI too. There might still be some incompatibilities between the Jekyll and Astro.js frontmatter formats, but I can always iron them out later.
 
-Oh, and I picked a header image for this post too — a little play on “I’m old”: Trevor Pearcey operating the CSIR Mk1 in 1952, one of the world’s first digital computers. Feels about right for a post about looking back at how far the tools, and I, have come.
+Oh, and I picked a header image for this post too - a little play on “I’m old”: Trevor Pearcey operating the CSIR Mk1 in 1952, one of the world’s first digital computers. Feels about right for a post about looking back at how far the tools, and I, have come.
 
 ---
 
